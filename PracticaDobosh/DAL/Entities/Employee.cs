@@ -16,6 +16,6 @@ namespace PracticaDobosh.DAL.Entities
         public ICollection<Equipment> ResponsibleEquipment { get; set; }
         public ICollection<MovementHistory> OldMovements { get; set; }
         public ICollection<MovementHistory> NewMovements { get; set; }
-        //dd
+        
     }
 }
