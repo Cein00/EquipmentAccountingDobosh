@@ -13,11 +13,10 @@ namespace PracticaDobosh.BLL
     {
         private readonly EquipmentDbContext _db;
 
-        public DepartmentService()
+        public DepartmentService(EquipmentDbContext db)
         {
-            _db = new EquipmentDbContext();
+            _db = db;
         }
-
         public async Task<List<Department>> GetAllAsync()
         {
             return await _db.Departments.ToListAsync();

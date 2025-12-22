@@ -24,6 +24,7 @@ namespace PracticaDobosh
                 DepartmentForm departmentForm = new DepartmentForm();
                 departmentForm.Show();
             }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

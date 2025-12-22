@@ -1,4 +1,5 @@
 ﻿using PracticaDobosh.BLL;
+using PracticaDobosh.DAL.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace PracticaDobosh
 {
     public partial class DepartmentForm : Form
     {
-        private readonly DepartmentService _service = new DepartmentService();
+        private static readonly EquipmentDbContext _db = new EquipmentDbContext();
+        private readonly DepartmentService _service = new DepartmentService(_db);
         public DepartmentForm()
         {
             InitializeComponent();

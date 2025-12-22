@@ -23,8 +23,11 @@ namespace PracticaDobosh.DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connString = ConfigurationManager.ConnectionStrings["ConnectionDb"].ConnectionString;
-            optionsBuilder.UseSqlServer(connString);
+            if (!optionsBuilder.IsConfigured)
+            {
+                string connString = ConfigurationManager.ConnectionStrings["ConnectionDb"].ConnectionString;
+                optionsBuilder.UseSqlServer(connString);
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -50,10 +53,9 @@ namespace PracticaDobosh.DAL.Context
 
         }
 
-        public EquipmentDbContext()
-        {
-            Database.EnsureCreated();
-        }
+        public EquipmentDbContext() { }
+
+        public EquipmentDbContext(DbContextOptions<EquipmentDbContext> options) : base(options) { }
 
     }
 }

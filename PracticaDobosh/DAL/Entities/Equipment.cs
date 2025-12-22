@@ -14,7 +14,7 @@ namespace PracticaDobosh.DAL.Entities
         public DateTime RegistrationDate { get; set; }
         public string Status { get; set; }
         public int TypeId { get; set; }
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
         public EquipmentType EquipmentType { get; set; }
         public Employee ResponsibleEmployee { get; set; }
         public ICollection<InstalledSoftware> InstalledSoftware { get; set; }
