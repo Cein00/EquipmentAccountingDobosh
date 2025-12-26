@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +23,11 @@ namespace PracticaDobosh
             {
                 DepartmentForm departmentForm = new DepartmentForm();
                 departmentForm.Show();
+            }
+            if(listBox1.SelectedItem?.ToString() == "Сотрудники")
+            {
+                EmplyeeForm emplyeeForm = new EmplyeeForm();
+                emplyeeForm.Show();
             }
 
         }
